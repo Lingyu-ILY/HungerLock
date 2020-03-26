@@ -9,6 +9,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.*;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
+import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.*;
@@ -40,6 +41,19 @@ public class Main extends JavaPlugin implements Listener {
             	event.setCancelled(true);
                 player.setFoodLevel(19);
                 player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
+            }
+            }
+        }, 1L);
+    }
+    
+    @EventHandler(priority = EventPriority.HIGH)
+    public void onSpawn(PlayerRespawnEvent event) {
+    	Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
+            @Override
+            public void run() {
+            	Player player = event.getPlayer();
+            if(player.getFoodLevel() > 19) {
+                player.setFoodLevel(19);
             }
             }
         }, 1L);
