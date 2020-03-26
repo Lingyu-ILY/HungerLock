@@ -1,6 +1,6 @@
 name: "HungerLock"
 author: Lingyu
-version: "1.1.4"
+version: "1.2.0"
 api-version: 1.13
 description: "Lock Hunger For RPG"
 main: com.Lingyu.HungerLock.Main
