@@ -29,7 +29,7 @@ public class Main extends JavaPlugin implements Listener {
     	getServer().getConsoleSender().sendMessage("HungerLock is disable!");
     }
 
-    @EventHandler(priority = EventPriority.HIGH)
+    @EventHandler(priority = EventPriority.NORMAL)
     public void onFoodChange(FoodLevelChangeEvent event) {
     	Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
             @Override
@@ -46,7 +46,7 @@ public class Main extends JavaPlugin implements Listener {
         }, 1L);
     }
     
-    @EventHandler(priority = EventPriority.HIGH)
+    @EventHandler(priority = EventPriority.NORMAL)
     public void onSpawn(PlayerRespawnEvent event) {
     	Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
             @Override
