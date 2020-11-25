@@ -52,9 +52,7 @@ public class Main extends JavaPlugin implements Listener {
             @Override
             public void run() {
             	Player player = event.getPlayer();
-            if(player.getFoodLevel() > 19) {
                 player.setFoodLevel(19);
-            }
             }
         }, 1L);
     }
